@@ -6,6 +6,8 @@ minified: `https://github.com/riddance-club/ui/releases/latest/download/library.
 
 standard: `https://raw.githubusercontent.com/riddance-club/ui/refs/heads/main/library.lua`
 
+example usage: `https://github.com/riddance-club/ui/blob/main/example.lua`
+
 below this is a simple documentation of the current api of this ui library.
 # Library
 ```lua
