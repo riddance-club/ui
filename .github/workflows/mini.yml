@@ -1,0 +1,29 @@
+name: Mini Release
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install darklua
+        run: |
+          curl -L https://github.com/seaofvoices/darklua/releases/latest/download/darklua-linux-x86_64.zip -o darklua.zip
+          unzip darklua.zip && sudo mv darklua /usr/local/bin/
+      - name: Minify file
+        run: |
+          mkdir dist
+          darklua process library.lua dist/main.lua --config darklua.json
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin --delete mini || true
+          git tag -f mini
+          git push origin -f mini
+          gh release delete mini -y || true
+          gh release create mini dist/main.lua --title "Minified build" --notes "Automatically updated minified build."
