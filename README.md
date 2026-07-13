@@ -1,6 +1,12 @@
-riddance's shitty ui library, base was made quickly in like 1 day for fun with the help of slop code. it is extremely customisable due to it being extremely simple ui and letting you edit the raw properties themselves. you can use this in your games if you want to make a menu for admin or similiar.
+riddance's shitty ui library, base was made quickly in like 1 day for fun with the help of slop code. it is extremely customisable due to it being extremely simple ui and letting you edit the raw properties themselves. you can use this in your games if you want to make a menu for admin or similiar. however i don't think you should use this library unless you have a clear purpose for it since it isn't a very high quality one.
 
-simple quick documentation of current api:
+links to the library:
+
+minified: `https://github.com/riddance-club/ui/releases/download/mini/main.lua`
+
+standard: `https://raw.githubusercontent.com/riddance-club/ui/refs/heads/main/library.lua`
+
+below this is a simple documentation of the current api of this ui library.
 # Library
 ```lua
 function Library:CreateWindow(tbl) 
