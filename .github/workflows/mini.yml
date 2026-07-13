@@ -17,7 +17,7 @@ jobs:
       - name: Minify file
         run: |
           mkdir dist
-          darklua process library.lua dist/main.lua --config darklua.json
+          darklua process library.lua dist/library.lua --config darklua.json
       - name: Create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -26,4 +26,4 @@ jobs:
           git tag -f mini
           git push origin -f mini
           gh release delete mini -y || true
-          gh release create mini dist/main.lua --title "Minified build" --notes "Automatically updated minified build."
+          gh release create mini dist/library.lua --title "Minified build" --notes "Automatically updated minified build."
