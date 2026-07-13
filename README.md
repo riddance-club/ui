@@ -2,7 +2,7 @@ riddance's shitty ui library, base was made quickly in like 1 day for fun with t
 
 links to the library:
 
-minified: `https://github.com/riddance-club/ui/releases/download/mini/main.lua`
+minified: `https://github.com/riddance-club/ui/releases/latest/download/library.lua`
 
 standard: `https://raw.githubusercontent.com/riddance-club/ui/refs/heads/main/library.lua`
 
