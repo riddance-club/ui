@@ -3,6 +3,7 @@ local GuiService = game:GetService("GuiService")
 local Debris = game:GetService("Debris")
 
 local GUI = Instance.new("ScreenGui")
+GUI.ResetOnSpawn = false
 
 local Frame = Instance.new("Frame", GUI)
 Frame.Position = UDim2.new(0.35, 0, 0.35, 0)
