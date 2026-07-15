@@ -1,5 +1,5 @@
 local UserInputService = game:GetService("UserInputService")
-local GuiService = game:GetService("GuiService")
+local StarterGui = game:GetService("StarterGui")
 local Debris = game:GetService("Debris")
 
 local GUI = Instance.new("ScreenGui")
@@ -151,13 +151,7 @@ function Library:SetUIParent(parent)
 end
 
 function Library:Notification(tbl)
-	tbl = tbl or {}
-	local success, message = pcall(function()
-		GuiService:SendCoreUiNotification(tbl.Title or "Notification", tbl.Text or "")
-	end)
-	if not success then
-		warn("Error sending notification:", message)
-	end
+	StarterGui:SetCore("SendNotification", tbl)
 end
 
 function Library:Message(tbl)
